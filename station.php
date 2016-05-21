@@ -3,7 +3,10 @@ include("judge.php");
   include("conn.php");//引入链接数据库  
 
   if(!empty($_POST['sub'])){  
+<<<<<<< HEAD
  // print_r($_POST);exit;
+=======
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
     $name=$_POST['name'];  
     $x=$_POST['x'];
     $y=$_POST['y'];
@@ -14,12 +17,18 @@ include("judge.php");
   }  
 
   if(!empty ($_POST['del_sub'])){
+<<<<<<< HEAD
   //print_r($_POST);exit;  
+=======
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
      $d=$_POST['id'];
      $sql="delete from `bike_station` where id='$d'";  
      //echo $sql;exit;
      mysql_query($sql); 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
   }
 
     if(!empty ($_POST['edit_sub'])){  
@@ -208,7 +217,10 @@ include("judge.php");
                         $countReturn=$rsReturn[0];
                   ?>
                   <tr>
+<<<<<<< HEAD
                   <!-- <td>站点<?php echo $rs['id'] ?></td> -->
+=======
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
                   <td><?php echo $rs['name'] ?></td>
                   <td><?php echo $rs['x'] ?></td>
                   <td><?php echo $rs['y'] ?></td>

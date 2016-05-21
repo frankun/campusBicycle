@@ -47,12 +47,21 @@ $rsStation=mysql_fetch_array($query);
   $sql="select * from `bike_lend` where userId=$person order by id desc limit $start,$pagesize";
 }
 
+<<<<<<< HEAD
                else if(isset($_GET['status'])){
                   $status=$_GET['status'];
                   $sql="select * from `bike_lend` where status=$status order by id desc limit $start,$pagesize";
                   }else{
                    $sql="select * from `bike_lend` order by id desc limit $start,$pagesize";
                   }
+=======
+else if(isset($_GET['status'])){
+    $status=$_GET['status'];
+    $sql="select * from `bike_lend` where status=$status order by id desc limit $start,$pagesize";
+}else{
+    $sql="select * from `bike_lend` order by id desc limit $start,$pagesize";
+}
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
                   
                   $query=mysql_query($sql);
 
@@ -60,7 +69,10 @@ if(isset($_GET['person'])){
   $sql="select * from `bike_lend` where userId=$person";
   $personQuery=mysql_query($sql);
 $num=mysql_num_rows($personQuery);
+<<<<<<< HEAD
 
+=======
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
 }
              else if(isset($_GET['status'])){
                 $sql="select * from `bike_lend` where status=$status";
@@ -179,10 +191,14 @@ $num=mysql_num_rows($personQuery);
               </thead>
               <tbody>
                 <?php
+<<<<<<< HEAD
 
 
                   while($rs=mysql_fetch_array($query)){
               
+=======
+                  while($rs=mysql_fetch_array($query)){
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
                   $userId=$rs['userId'];
                   $sql="select * from `bike_user` where id=$userId";
                   $userQuery=mysql_query($sql);
@@ -205,7 +221,11 @@ $num=mysql_num_rows($personQuery);
                   <td><?php echo $rsLendStation['name']; ?></td>
                   <td><?php $returnDates=$rs['returnCreateAt']; 
                   $changeDates=date("Y-m-d H:i",$returnDates);
+<<<<<<< HEAD
                   if($returnDates==0){echo "未还";}else{ echo $changeDates; } ?></td>
+=======
+                  if($returnDates==NULL){echo "未还";}else{ echo $changeDates; } ?></td>
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
                   <td><?php if($rs['returnStationId']==NULL){echo "未还";}else{ echo $rsReturnStation['name'];} ?></td>
                 </tr>
                 <?php

@@ -1,7 +1,11 @@
 <?php
 session_start();
  include("conn.php");
+<<<<<<< HEAD
 header("Content-Type: text/html;charset=utf-8");
+=======
+
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
  if(!empty($_POST['sub'])){
 
 $username=$_POST['username'];
@@ -22,8 +26,11 @@ header('Location:./index.php');
 exit;
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
 ?>
 
 <!DOCTYPE html>

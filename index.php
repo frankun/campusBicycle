@@ -9,12 +9,15 @@ include("judge.php");
   }else{
   $count=0;
   }
+<<<<<<< HEAD
   // echo $count;exit;
   // echo $sql;exit;
   // $query=mysql_query($sql);
   // //echo $query;exit;
   // $rs=mysql_fetch_array($query)
   // //print_r($rs);exit;
+=======
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
 
   $timeToday=strtotime(date("Y-m-d"));
   $sql="SELECT COUNT(*) AS count FROM `bike_user` where createAt>=$timeToday"; //计算该表中注册时间大于今日零点的用户数量；
@@ -26,9 +29,12 @@ include("judge.php");
   $countNewUser=0;
   }
 
+<<<<<<< HEAD
   // $percent=$countNewUser/$count*100;  //计算新用户与总用户的百分比；
   //echo $percent;exit;
 
+=======
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
   $sql="select sum(initNumber) from `bike_station`";  //计算该表中initNumber字段下的总数即初始车辆总数；
   $query=mysql_query($sql);
   if($rs=mysql_fetch_array($query)){
@@ -36,7 +42,10 @@ include("judge.php");
   }else{
   $countBikeNumber=0;  //车辆总数；
   }
+<<<<<<< HEAD
   //echo $countBikeNumber;exit;
+=======
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
 
   $sql="select sum(Number) from `bike_station`";  //计算停放车辆总数；
   $query=mysql_query($sql);
@@ -57,7 +66,11 @@ include("judge.php");
   }
   // echo $lendNumber;exit;
 
+<<<<<<< HEAD
   $sql="select count(returnCreateAt) as count from `bike_lend` where status=1"; //计算returnCreateAt字段下的已经归还车辆的数据条数；
+=======
+  $sql="select count(returnCreateAt) as count from `bike_lend`"; //计算returnCreateAt字段下的已经归还车辆的数据条数；
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
   $query=mysql_query($sql);
   if($rs=mysql_fetch_array($query)){
     $returnNumber=$rs[0];   //归还流量统计；
@@ -74,7 +87,10 @@ include("judge.php");
   }else{
     $tdLendNumber=0;
   }
+<<<<<<< HEAD
   // echo $lendNumber;exit;
+=======
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
 
   $sql="select count(returnCreateAt) as count from `bike_lend` where returnCreateAt>=$timeToday";
   $query=mysql_query($sql);
@@ -83,7 +99,10 @@ include("judge.php");
   }else{
     $tdReturnNumber=0;
   }
+<<<<<<< HEAD
   // echo $returnNumber;exit;
+=======
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
   $tdSumNumber=$tdLendNumber+$tdReturnNumber; //当天总流量；
 
   $sql="select count(distinct userId) from `bike_lend`";
@@ -232,7 +251,11 @@ include("judge.php");
                   <td><?php echo $rsLendStation['name']; ?></td>
                   <td><?php $returnDates=$rs['returnCreateAt']; 
                   $changeDates=date("Y-m-d H:i",$returnDates);
+<<<<<<< HEAD
                   if($returnDates==0){echo "未还";}else{ echo $changeDates; } ?></td>
+=======
+                  if($returnDates==NULL){echo "未还";}else{ echo $changeDates; } ?></td>
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
                   <td><?php if($rs['returnStationId']==NULL){echo "未还";}else{ echo $rsReturnStation['name'];} ?></td>
                 </tr>
                 <?php

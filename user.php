@@ -1,7 +1,11 @@
 <?php
 include("judge.php");
 include("conn.php");
+<<<<<<< HEAD
 empty($_GET['type']) && $_GET['type'] = 'new';
+=======
+
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
 $sql="SELECT COUNT(*) AS count FROM `bike_user`";
 $query=mysql_query($sql);
 if($rs=mysql_fetch_array($query)){ 
@@ -42,6 +46,7 @@ if(isset($_GET['id'])){
   $id=$_GET['id'];
   $sql="select * from `bike_user` where id=$id order by id desc";
 }
+<<<<<<< HEAD
                 else if($_GET['type']=='new'){
                   $sql="select * from `bike_user` where createAt>=$timeToday order by id desc limit $start,$pagesize";
                   }
@@ -49,6 +54,15 @@ if(isset($_GET['id'])){
                    $sql="select * from `bike_user` where $keys order by id desc limit $start,$pagesize";
                   }
                 $query=mysql_query($sql);
+=======
+else if($_GET['type']=='new'){
+  $sql="select * from `bike_user` where createAt>=$timeToday order by id desc limit $start,$pagesize";
+}
+else {
+  $sql="select * from `bike_user` where $keys order by id desc limit $start,$pagesize";
+}
+$query=mysql_query($sql);
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
 
 if(!empty($_GET['keys'])){
     $keys="select * from `bike_user` where `wechatName` like '%".$_GET['keys']."%' ";
@@ -67,6 +81,7 @@ $sql="select * from `bike_user` where createAt>=$timeToday";
 $userQuery=mysql_query($sql);
 $num=mysql_num_rows($userQuery);
 $pagecount=(($num%$pagesize)==0)?($num/$pagesize):(int)($num/$pagesize+1);} 
+<<<<<<< HEAD
               else{
               $sql="select * from `bike_user`";
               $userQuery=mysql_query($sql);
@@ -86,6 +101,25 @@ $pagecount=(($num%$pagesize)==0)?($num/$pagesize):(int)($num/$pagesize+1);}
               }else{
                 $nextStatus=false;
               }
+=======
+else{
+  $sql="select * from `bike_user`";
+  $userQuery=mysql_query($sql);
+  $num=mysql_num_rows($userQuery);
+  $pagecount=(($num%$pagesize)==0)?($num/$pagesize):(int)($num/$pagesize+1);}
+$prevStatus=false;
+$nextStatus=false;
+if($p>1 && $p<=$pagecount){
+  $prevStatus=true;
+}else{
+  $prevStatus=false;
+}
+if($p>0 && $p<$pagecount){
+    $nextStatus=true;
+}else{
+  $nextStatus=false;
+}
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
 ?>
 
 <!DOCTYPE html>
@@ -190,7 +224,11 @@ $pagecount=(($num%$pagesize)==0)?($num/$pagesize):(int)($num/$pagesize+1);}
                   ?>
                 <tr>
                   <td><a href="./lend.php?person=<?php echo $userId; ?>"><?php echo $rs['wechatName'];if($_GET['type']=='new'){echo （新）;}else{;} ?><a></td>
+<<<<<<< HEAD
                   <td><?php if($rs['gender']==1){echo 男;}else{echo 女;} ?></td>
+=======
+                  <td><?php if($rs['gender']==0){echo 男;}else{echo 女;} ?></td>
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
                   <td><?php $dates=$rs['createAt']; echo date("Y-m-d",$dates); ?></td>
                   <td><?php echo $countLend; ?></td>
                   <td><?php if(!$rsStatus){echo '未借';}else if($rsStatus['status']==1){echo '已还';}else{echo '未还';} ?></td>  
@@ -215,7 +253,11 @@ $pagecount=(($num%$pagesize)==0)?($num/$pagesize):(int)($num/$pagesize+1);}
   <a href="<?php if($nextStatus){ if($_GET['type']=='new'){echo "./user.php?type=new&p=".($p+1);}
                                   else{echo "./user.php?p=".($p+1);}}
                  else{echo '#';} ?>"><?php if($pagecount==0){;}else{echo "下一页";} ?></a> <?php if($pagecount==0){;}else{echo "第 ".$p." 页";} ?></div>
+<<<<<<< HEAD
           </div>
+=======
+</div>
+>>>>>>> ab00a96d6ef6a6fd4a12180d5caef3d2ea815a6d
         </div>
       </div>
     </div>
