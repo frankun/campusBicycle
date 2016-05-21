@@ -101,8 +101,8 @@
       <file leaf-file-name="conn.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/conn.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2948403">
-              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.14742015">
+              <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -461,12 +461,12 @@
       <option name="number" value="Default" />
       <updated>1463657778747</updated>
       <workItem from="1463657781476" duration="1605000" />
-      <workItem from="1463806779648" duration="3356000" />
+      <workItem from="1463806779648" duration="3775000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4961000" />
+    <option name="totallyTimeSpent" value="5380000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1276" height="777" extended-state="0" />
@@ -647,8 +647,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/conn.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2948403">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.14742015">
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
           <folding />
         </state>
       </provider>
